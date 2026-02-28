@@ -5,78 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard</title>
 <style>
-  /* Reset i podstawy */
-  * { box-sizing: border-box; margin:0; padding:0; font-family: 'Segoe UI', sans-serif; }
-  body { background: #1e1f26; color: #fff; min-height:100vh; display:flex; flex-direction:column; }
-
-  /* Nagłówek */
-  header { background:#2b2d3a; padding:20px; text-align:center; font-size:1.8rem; font-weight:bold; box-shadow:0 2px 5px rgba(0,0,0,0.5); }
-
-  /* Layout główny */
-  main { flex:1; display:flex; flex-direction:column; align-items:center; padding:20px; max-width:1000px; margin:0 auto; }
-
-  /* Karty */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1e1f26;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: #2b2d3a;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
   .card {
-    background:#2b2d3a; border-radius:10px; padding:20px; margin:15px 0;
-    width:100%; max-width:600px; box-shadow:0 4px 15px rgba(0,0,0,0.5); transition: transform 0.2s;
+    background: #2b2d3a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
   }
-  .card:hover { transform: translateY(-5px); }
-
-  .card h2 { margin-bottom:10px; color:#7289da; }
-
-  /* Przyciski */
+  .card h2 {
+    color: #7289da;
+    margin-top: 0;
+  }
   button {
-    background:#7289da; border:none; padding:10px 20px; border-radius:5px; color:#fff;
-    cursor:pointer; font-size:1rem; transition:background 0.2s;
+    background: #7289da;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
   }
-  button:hover { background:#5b6eae; }
-
-  /* Sekcje ukryte/pokazane */
-  #welcome-card { display:none; }
-
-  /* Styl listy */
-  ul { list-style:none; margin-top:10px; }
-  li { margin-bottom:5px; background:#1e1f26; padding:8px 12px; border-radius:5px; }
+  button:hover { background: #5b6eae; }
 </style>
 </head>
 <body>
 
-<header>Dashboard użytkownika</header>
+<header>Dashboard</header>
 
 <main>
-  <!-- Logowanie -->
   <div class="card" id="login-card">
     <h2>Logowanie</h2>
-    <p>Kliknij przycisk, aby się zalogować:</p>
+    <p>Kliknij przycisk, aby zalogować się:</p>
     <button id="login-btn">Zaloguj się</button>
   </div>
 
-  <!-- Powitanie po zalogowaniu -->
-  <div class="card" id="welcome-card">
+  <div class="card" id="welcome-card" style="display:none;">
     <h2>Witaj, <span id="username">Użytkowniku</span>!</h2>
-    <p>ID użytkownika: <span id="userid">0000</span></p>
+    <p>ID: <span id="userid">0000</span></p>
     <button id="logout-btn">Wyloguj się</button>
   </div>
 
-  <!-- Dodatkowe sekcje -->
-  <div class="card" id="stats-card">
-    <h2>Statystyki</h2>
-    <ul>
-      <li>Wszystkie logowania: 12</li>
-      <li>Ostatnie logowanie: 2026-02-28</li>
-      <li>Ustawienia aktywne: 5</li>
-    </ul>
-  </div>
-
-  <div class="card" id="info-card">
+  <div class="card">
     <h2>Informacje</h2>
-    <p>Ta strona jest całkowicie statyczna i działa lokalnie w przeglądarce. Wszystko jest symulowane – żadnego bota ani backendu!</p>
+    <p>Ta strona jest statyczna i działa lokalnie w przeglądarce. Wszystko jest bez bota i backendu.</p>
   </div>
-
 </main>
 
 <script>
-  // Symulacja logowania
   const loginBtn = document.getElementById('login-btn');
   const logoutBtn = document.getElementById('logout-btn');
   const loginCard = document.getElementById('login-card');
@@ -88,7 +81,6 @@
     const fakeUser = { username: "Janek", id: "123456789" };
     usernameEl.textContent = fakeUser.username;
     useridEl.textContent = fakeUser.id;
-
     loginCard.style.display = "none";
     welcomeCard.style.display = "block";
   });
