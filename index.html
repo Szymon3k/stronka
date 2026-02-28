@@ -3,54 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ziomalmc</title>
-<link rel="stylesheet" href="styles.css">
+<title>Dashboard</title>
+<style>
+  /* Reset i podstawy */
+  * { box-sizing: border-box; margin:0; padding:0; font-family: 'Segoe UI', sans-serif; }
+  body { background: #1e1f26; color: #fff; min-height:100vh; display:flex; flex-direction:column; }
+
+  /* Nagłówek */
+  header { background:#2b2d3a; padding:20px; text-align:center; font-size:1.8rem; font-weight:bold; box-shadow:0 2px 5px rgba(0,0,0,0.5); }
+
+  /* Layout główny */
+  main { flex:1; display:flex; flex-direction:column; align-items:center; padding:20px; max-width:1000px; margin:0 auto; }
+
+  /* Karty */
+  .card {
+    background:#2b2d3a; border-radius:10px; padding:20px; margin:15px 0;
+    width:100%; max-width:600px; box-shadow:0 4px 15px rgba(0,0,0,0.5); transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-5px); }
+
+  .card h2 { margin-bottom:10px; color:#7289da; }
+
+  /* Przyciski */
+  button {
+    background:#7289da; border:none; padding:10px 20px; border-radius:5px; color:#fff;
+    cursor:pointer; font-size:1rem; transition:background 0.2s;
+  }
+  button:hover { background:#5b6eae; }
+
+  /* Sekcje ukryte/pokazane */
+  #welcome-card { display:none; }
+
+  /* Styl listy */
+  ul { list-style:none; margin-top:10px; }
+  li { margin-bottom:5px; background:#1e1f26; padding:8px 12px; border-radius:5px; }
+</style>
 </head>
 <body>
 
-<nav class="navbar">
-<div class="logo">ZIOMAL<span>MC</span></div>
-<div class="nav-links">
-<a href="#start">Start</a>
-<a href="#features">Funkcje</a>
-<a href="#join">Jak dołączyć</a>
-<a href="#shop">Sklep</a>
-<a href="#discord">Discord</a>
-</div>
-</nav>
+<header>Dashboard użytkownika</header>
 
-<section id="start" class="hero">
-<div class="hero-content">
-<div class="status">● Serwer online • Java & Bedrock</div>
-<h1>ZIOMAL<span>MC</span></h1>
-<p>Najlepszy polski serwer Minecraft. Dołącz do naszej społeczności i przeżyj niezapomniane przygody!</p>
-<div class="buttons">
-<button class="ip-btn" onclick="copyIP()">ziomalmc.pl</button>
-<a href="#features" class="join-btn">Jak dołączyć?</a>
-</div>
-<small>Kliknij aby skopiować IP serwera</small>
-</div>
-</section>
+<main>
+  <!-- Logowanie -->
+  <div class="card" id="login-card">
+    <h2>Logowanie</h2>
+    <p>Kliknij przycisk, aby się zalogować:</p>
+    <button id="login-btn">Zaloguj się</button>
+  </div>
 
-<section id="features" class="features">
-<h2>Dlaczego <span>Ziomalmc?</span></h2>
-<p class="subtitle">Sprawdź co nas wyróżnia od innych serwerów</p>
+  <!-- Powitanie po zalogowaniu -->
+  <div class="card" id="welcome-card">
+    <h2>Witaj, <span id="username">Użytkowniku</span>!</h2>
+    <p>ID użytkownika: <span id="userid">0000</span></p>
+    <button id="logout-btn">Wyloguj się</button>
+  </div>
 
-<div class="cards">
-<div class="card"><h3>Survival</h3><p>Klasyczny tryb przetrwania z dodatkami i ulepszeniami.</p></div>
-<div class="card"><h3>Społeczność</h3><p>Aktywna i przyjazna społeczność graczy z całej Polski.</p></div>
-<div class="card"><h3>Anti-Cheat</h3><p>Zaawansowany system ochrony przed oszustami.</p></div>
-<div class="card"><h3>Brak lagów</h3><p>Wydajny serwer z niskim pingiem i stabilną grą.</p></div>
-<div class="card"><h3>Unikalne mapy</h3><p>Autorskie mapy i światy stworzone specjalnie dla Ciebie.</p></div>
-<div class="card"><h3>Eventy</h3><p>Regularne wydarzenia z nagrodami i wyzwaniami.</p></div>
-</div>
-</section>
+  <!-- Dodatkowe sekcje -->
+  <div class="card" id="stats-card">
+    <h2>Statystyki</h2>
+    <ul>
+      <li>Wszystkie logowania: 12</li>
+      <li>Ostatnie logowanie: 2026-02-28</li>
+      <li>Ustawienia aktywne: 5</li>
+    </ul>
+  </div>
+
+  <div class="card" id="info-card">
+    <h2>Informacje</h2>
+    <p>Ta strona jest całkowicie statyczna i działa lokalnie w przeglądarce. Wszystko jest symulowane – żadnego bota ani backendu!</p>
+  </div>
+
+</main>
 
 <script>
-function copyIP(){
-navigator.clipboard.writeText("ziomalmc.pl");
-alert("IP skopiowane!");
-}
+  // Symulacja logowania
+  const loginBtn = document.getElementById('login-btn');
+  const logoutBtn = document.getElementById('logout-btn');
+  const loginCard = document.getElementById('login-card');
+  const welcomeCard = document.getElementById('welcome-card');
+  const usernameEl = document.getElementById('username');
+  const useridEl = document.getElementById('userid');
+
+  loginBtn.addEventListener('click', () => {
+    const fakeUser = { username: "Janek", id: "123456789" };
+    usernameEl.textContent = fakeUser.username;
+    useridEl.textContent = fakeUser.id;
+
+    loginCard.style.display = "none";
+    welcomeCard.style.display = "block";
+  });
+
+  logoutBtn.addEventListener('click', () => {
+    loginCard.style.display = "block";
+    welcomeCard.style.display = "none";
+  });
 </script>
 
 </body>
