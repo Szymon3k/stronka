@@ -1,0 +1,100 @@
+/* styles.css - Motyw LordHost
+   Edytuj kolory, neon glow, baner i kolorystykę tutaj */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============ KOLORY MOTYWU ============ */
+:root {
+  /* Tło */
+  --background: hsl(220, 20%, 6%);
+  --foreground: hsl(55, 100%, 90%);
+
+  /* Karty */
+  --card: hsl(220, 18%, 10%);
+  --card-foreground: hsl(55, 100%, 90%);
+
+  /* Kolor główny - NEON ŻÓŁTY */
+  --primary: hsl(55, 100%, 50%);
+  --primary-foreground: hsl(220, 20%, 6%);
+
+  /* Kolory pomocnicze */
+  --secondary: hsl(220, 15%, 15%);
+  --secondary-foreground: hsl(55, 100%, 90%);
+  --muted: hsl(220, 15%, 15%);
+  --muted-foreground: hsl(220, 10%, 55%);
+
+  /* Akcent */
+  --accent: hsl(55, 100%, 50%);
+  --accent-foreground: hsl(220, 20%, 6%);
+
+  /* Obramowanie i input */
+  --border: hsl(55, 60%, 20%);
+  --input: hsl(220, 15%, 18%);
+  --ring: hsl(55, 100%, 50%);
+
+  --radius: 0.75rem;
+
+  /* ============ EFEKTY NEON ============ */
+  --neon-glow: 0 0 10px hsl(55, 100%, 50%), 0 0 20px hsl(55, 100%, 50%, 0.5), 0 0 40px hsl(55, 100%, 50%, 0.25);
+  --neon-glow-sm: 0 0 5px hsl(55, 100%, 50%), 0 0 10px hsl(55, 100%, 50%, 0.3);
+  --neon-text-glow: 0 0 10px hsl(55, 100%, 50%, 0.8), 0 0 20px hsl(55, 100%, 50%, 0.4);
+}
+
+/* ============ TYPOGRAFIA ============ */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', monospace;
+}
+
+/* ============ EFEKTY ============ */
+.neon-glow {
+  box-shadow: var(--neon-glow);
+}
+
+.neon-glow-sm {
+  box-shadow: var(--neon-glow-sm);
+}
+
+.neon-text {
+  text-shadow: var(--neon-text-glow);
+}
+
+.neon-border {
+  border-color: hsl(55, 100%, 50%);
+  box-shadow: inset 0 0 10px hsl(55, 100%, 50%, 0.1), var(--neon-glow-sm);
+}
+
+/* ============ SZKLANE KARTY ============ */
+.glass-card {
+  background: hsla(220, 18%, 10%, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(55, 100%, 50%, 0.15);
+}
+
+.glass-card:hover {
+  border-color: hsl(55, 100%, 50%, 0.4);
+  box-shadow: var(--neon-glow-sm);
+}
+
+/* ============ BANER / HERO ============ */
+.hero-banner {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, hsl(220, 20%, 4%) 0%, hsl(220, 18%, 10%) 50%, hsl(55, 30%, 8%) 100%);
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, hsl(55, 100%, 50%, 0.08) 0%, transparent 60%);
+}
