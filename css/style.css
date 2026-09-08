@@ -32,40 +32,74 @@ body {
     margin: 0 auto;
 }
 
-/* Górna nawigacja / zakładki */
-.top-nav {
+/* Ciemny pasek nawigacji z obrazka */
+.navbar {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 24px;
-    background: var(--card-bg);
-    padding: 8px;
-    border-radius: 30px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-    max-width: max-content;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 32px;
+    background-color: #050505;
+    padding: 16px 24px;
+    margin-bottom: 30px;
+    border-radius: 8px;
 }
 
 .nav-link {
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--muted-color);
-    transition: all 0.2s ease;
-}
-
-.nav-link:hover {
-    color: var(--primary-color);
+    color: #e2e8f0;
     text-decoration: none;
-    background-color: var(--accent-bg);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
+.nav-link:hover, 
 .nav-link.active {
-    background-color: var(--primary-color);
     color: #ffffff;
+    text-decoration: none;
+}
+
+/* Rozwijane menu Oferta */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.arrow {
+    font-size: 0.75rem;
+    margin-left: 2px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #121212;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 100;
+}
+
+.dropdown-menu a {
+    color: #cbd5e1;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: #1e293b;
+    color: #ffffff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
 /* Header */
@@ -248,6 +282,10 @@ a:hover {
 /* Responsywność */
 @media (max-width: 640px) {
     body {
+        padding: 12px;
+    }
+    .navbar {
+        gap: 16px;
         padding: 12px;
     }
     .card {
