@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - DreamlyHost.pl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/kontakt.css">
+</head>
+<body>
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="Logo">Dreamly<span>Host</span>.pl</a>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <nav class="nav-menu">
+            <a href="index.html">Strona Główna</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Oferta <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                <div class="dropdown-content">
+                    <a href="oferta/minecraft.html">Serwery Minecraft</a>
+                    <a href="oferta/boty-discord.html">Boty Discord</a>
+                </div>
+            </div>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+        
+        <div class="nav-actions">
+            <a href="https://dash.dreamlyhost.pl" class="btn-panel"><i class="fa-solid fa-server"></i> Panel Klienta</a>
+        </div>
+    </div>
+</header>
+
+
+<main class="contact-section">
+    <div class="contact-header">
+        <h1>Skontaktuj się z <span>nami</span></h1>
+        <p>Masz pytania? Nasz zespół wsparcia jest do Twojej dyspozycji.</p>
+    </div>
+
+    <form class="contact-form" action="#" method="POST">
+        <div class="form-group">
+            <label for="name">Imię i nazwisko</label>
+            <input type="text" id="name" name="name" required placeholder="Twoje imię">
+        </div>
+        <div class="form-group">
+            <label for="email">Adres e-mail</label>
+            <input type="email" id="email" name="email" required placeholder="twój@email.pl">
+        </div>
+        <div class="form-group">
+            <label for="subject">Temat</label>
+            <select id="subject" name="subject">
+                <option value="general">Pytanie ogólne</option>
+                <option value="support">Wsparcie techniczne</option>
+                <option value="billing">Rozliczenia</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="message">Wiadomość</label>
+            <textarea id="message" name="message" rows="5" required placeholder="W czym możemy pomóc?"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Wyślij wiadomość</button>
+    </form>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-credits">
+            Copyright © 2026 DreamlyHost.pl - Wszelkie prawa zastrzeżone.
+        </div>
+        <div class="footer-credits">
+            Site designed by: <a href="https://nyxed.kwarc-code.dev" target="_blank">! Nyxed_</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
