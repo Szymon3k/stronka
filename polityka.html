@@ -8,23 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/head-loader.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Nawigacja górna -->
-        <nav class="navbar">
-            <a href="index.html" class="nav-link">Strona Główna</a>
-            <div class="dropdown">
-                <a href="#" class="nav-link dropdown-toggle">Oferta <span class="arrow">∨</span></a>
-                <div class="dropdown-menu">
-                    <a href="#">Serwery</a>
-                    <a href="#">Hosting</a>
-                </div>
-            </div>
-            <a href="kontakt.html" class="nav-link">Kontakt</a>
-            <a href="polityka.html" class="nav-link active">Polityka</a>
-        </nav>
+    <div id="head-container"></div>
 
+    <div class="container">
         <header class="header">
             <div class="badge">Dokument prawny</div>
             <h1>Polityka Prywatności</h1>
@@ -34,18 +23,18 @@
         <main class="content">
             <section class="card">
                 <h2>§1 Postanowienia ogólne</h2>
-                <p id="preview-text1">Niniejsza polityka prywatności dotyczy serwisu działającego pod adresem internetowym <strong>dreamlyhost.pl</strong>. Administrator danych jest firma <strong>SPÓJNIA</strong> znajdująca się pod adresem Juliusza Słowackiego 4, 80-257 Gdańsk o numerze NIP 5842467770 oraz o numerze KRS 0000122093.</p>
+                <p>Niniejsza polityka prywatności dotyczy serwisu działającego pod adresem internetowym <strong>dreamlyhost.pl</strong>. Administrator danych jest firma <strong>SPÓJNIA</strong> znajdująca się pod adresem Juliusza Słowackiego 4, 80-257 Gdańsk o numerze NIP 5842467770 oraz o numerze KRS 0000122093.</p>
                 <p>Administrator wykorzystuje zbierane przez serwis dane do jego prowadzenia i realizowania usług związanych z nim zgodnie z postanowieniami niniejszej Polityki Prywatności i obowiązujących regulacji takich jak np. RODO.</p>
             </section>
 
             <section class="card">
                 <h2>§2 Inspektor danych</h2>
-                <p id="preview-text2">Na podstawie Art. 37 RODO, firma nie powołała Inspektora Ochrony Danych. W sprawach dotyczących przetwarzania danych należy kontaktować się z administratorem.</p>
+                <p>Na podstawie Art. 37 RODO, firma nie powołała Inspektora Ochrony Danych. W sprawach dotyczących przetwarzania danych należy kontaktować się z administratorem.</p>
             </section>
 
             <section class="card">
                 <h2>§3 Zbierane dane</h2>
-                <div id="preview-text3">
+                <div>
                     <p>Serwis zbiera dane o użytkownikach. Część danych jest zbierana automatycznie i nie jest przypisana do konkretnych użytkowników. Część danych jest dobrowolnie podawana przez użytkowników podczas korzystania z serwisu.</p>
                     
                     <div class="data-group">
@@ -69,12 +58,12 @@
 
             <section class="card">
                 <h2>§4 Przetwarzanie danych</h2>
-                <p id="preview-text4">Serwer na którym przechowywane i przetwarzane są dane jest zlokalizowany w Unii Europejskiej. Dane nie są przekazywane poza Unię Europejską.</p>
+                <p>Serwer na którym przechowywane i przetwarzane są dane jest zlokalizowany w Unii Europejskiej. Dane nie są przekazywane poza Unię Europejską.</p>
             </section>
 
             <section class="card">
                 <h2>§5 Zawartość podmiotów trzecich na stronie</h2>
-                <div id="preview-text5">
+                <div>
                     <p>Na stronie jest zawartość podmiotów trzecich. Mogą one zbierać dane we własnym zakresie, należy zapoznać się z ich politykami prywatności.</p>
                     <p><strong>Lista zawartości podmiotów trzecich wraz z linkami do ich polityk prywatności:</strong></p>
                     <ul class="external-links">
@@ -86,7 +75,7 @@
 
             <section class="card">
                 <h2>§6 Podmioty trzecie z dostępem do danych</h2>
-                <div id="preview-text6">
+                <div>
                     <p>Dostęp do danych mogą mieć podmioty trzecie świadczące niezbędne do działania serwisu usługi, są to:</p>
                     <ul>
                         <li>Pośrednicy płatności online</li>
@@ -98,7 +87,7 @@
 
             <section class="card">
                 <h2>§7 Pliki cookies</h2>
-                <div id="preview-text7">
+                <div>
                     <p>W serwisie stosowane są pliki cookies (tzw. „ciasteczka”) lub/oraz podobne technologie, dalej nazywane łącznie plikami cookies, które służą do przechowywania danych na urządzeniu użytkownika.</p>
                     <p>Stosowany jest następujący rodzaj plików cookies:</p>
                     <ul class="cookies-list">
@@ -113,7 +102,7 @@
 
             <section class="card">
                 <h2>§8 Podstawy prawne przetwarzania danych</h2>
-                <div id="preview-text8">
+                <div>
                     <p>Podstawą prawną przetwarzania danych są:</p>
                     <ul class="legal-list">
                         <li><strong>Art. 6 ust. 1 lit. a:</strong> Osoba, której dane dotyczą wyraziła zgodę na przetwarzanie swoich danych osobowych w jednym lub większej liczbie określonych celów.</li>
@@ -127,7 +116,7 @@
 
             <section class="card">
                 <h2>§9 Prawa użytkowników</h2>
-                <div id="preview-text9">
+                <div>
                     <p>Użytkownicy mają prawo do:</p>
                     <ul class="rights-list">
                         <li>
@@ -136,7 +125,7 @@
                         </li>
                         <li>
                             <strong>Sprostowania danych osobowych</strong>
-                            <span>Użytkownikom przysługuje prawo żądania od Administratora niezwłocznego sprostowania danych osobowych, które są nieprawidłowe lub/oraz uzupełnienia niekompletnych danych osobowych, jest ono realizowane na żądanie. Administrator zastrzega sobie prawo wstrzymania realizacji żądania usunięcia danych w celu ochrony prawnie uzasadnionego interesu Administratora (np. gdy Użytkownik dopuścił się naruszenia Regulaminu czy dane zostały pozyskane wskutek prowadzonej korespondencji).</span>
+                            <span>Użytkownikom przysługuje prawo żądania od Administratora niezwłocznego sprostowania danych osobowych, które są nieprawidłowe lub/oraz uzupełnienia niekompletnych danych osobowych, jest ono realizowane na żądanie.</span>
                         </li>
                         <li>
                             <strong>Usunięcia danych osobowych</strong>
@@ -144,15 +133,15 @@
                         </li>
                         <li>
                             <strong>Ograniczenia przetwarzania danych osobowych</strong>
-                            <span>Użytkownikom przysługuje prawo ograniczenia przetwarzania danych osobowych w przypadkach wskazanych w art. 18 RODO, m.in. kwestionowania prawidłowości danych osobowych, jest ono realizowane na żądanie.</span>
+                            <span>Użytkownikom przysługuje prawo ograniczenia przetwarzania danych osobowych w przypadkach wskazanych w art. 18 RODO.</span>
                         </li>
                         <li>
                             <strong>Przenoszenia danych osobowych</strong>
-                            <span>Użytkownikom przysługuje prawo uzyskania od Administratora danych osobowych dotyczących Użytkownika w ustrukturyzowanym, powszechnie używanym formacie nadającym się do odczytu maszynowego, jest to realizowane na żądanie.</span>
+                            <span>Użytkownikom przysługuje prawo uzyskania od Administratora danych osobowych w ustrukturyzowanym formacie nadającym się do odczytu maszynowego.</span>
                         </li>
                         <li>
                             <strong>Wniesienia sprzeciwu wobec przetwarzania danych osobowych</strong>
-                            <span>Użytkownikom przysługuje prawo wniesienia sprzeciwu wobec przetwarzania jego danych osobowych w przypadkach określonych w art. 21 RODO, realizowane na żądanie.</span>
+                            <span>Użytkownikom przysługuje prawo wniesienia sprzeciwu wobec przetwarzania danych w przypadkach określonych w art. 21 RODO.</span>
                         </li>
                         <li>
                             <strong>Wniesienia skargi</strong>
