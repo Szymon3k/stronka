@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Sprawdzenie, czy strona znajduje się w podfolderze (np. oferta/)
     const isSubfolder = window.location.pathname.includes('/oferta/');
     const basePath = isSubfolder ? '../' : '';
 
@@ -18,9 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         </nav>
     `;
 
-    // Wstawianie nawigacji do kontenera na stronie
     const navContainer = document.getElementById("head-container") || document.querySelector("header") || document.body;
     if (navContainer) {
-        navContainer.insertAdjacentHTML("afterbegin", navHTML);
+        navContainer.innerHTML = navHTML;
     }
 });
