@@ -1,26 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const head = document.head;
+document.addEventListener("DOMContentLoaded", function () {
+    // Sprawdzenie, czy strona znajduje się w podfolderze (np. oferta/)
+    const isSubfolder = window.location.pathname.includes('/oferta/');
+    const basePath = isSubfolder ? '../' : '';
 
-    const favicon = document.createElement('link');
-    favicon.rel = 'icon';
-    favicon.type = 'image/png';
-    favicon.href = 'img/logo.png';
+    const navHTML = `
+        <nav class="navbar">
+            <a href="${basePath}index.html" class="nav-link">Strona Główna</a>
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle">Oferta <span class="arrow">∨</span></a>
+                <div class="dropdown-menu">
+                    <a href="${basePath}oferta/boty-discord.html">Boty Discord</a>
+                    <a href="${basePath}oferta/minecraft.html">Serwery Minecraft</a>
+                </div>
+            </div>
+            <a href="${basePath}kontakt.html" class="nav-link">Kontakt</a>
+            <a href="${basePath}polityka.html" class="nav-link">Polityka</a>
+        </nav>
+    `;
 
-    const fontConnect = document.createElement('link');
-    fontConnect.rel = 'preconnect';
-    fontConnect.href = 'https://fonts.googleapis.com';
-
-    const gstaticConnect = document.createElement('link');
-    gstaticConnect.rel = 'preconnect';
-    gstaticConnect.href = 'https://fonts.gstatic.com';
-    gstaticConnect.crossOrigin = 'anonymous';
-
-    const fontsLink = document.createElement('link');
-    fontsLink.rel = 'stylesheet';
-    fontsLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Fira+Code:wght@400;500&display=swap';
-
-    head.appendChild(favicon);
-    head.appendChild(fontConnect);
-    head.appendChild(gstaticConnect);
-    head.appendChild(fontsLink);
+    // Wstawianie nawigacji do kontenera na stronie
+    const navContainer = document.getElementById("head-container") || document.querySelector("header") || document.body;
+    if (navContainer) {
+        navContainer.insertAdjacentHTML("afterbegin", navHTML);
+    }
 });
