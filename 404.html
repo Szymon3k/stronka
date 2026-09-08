@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Nie znaleziono strony | DreamlyHost.pl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/head.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            text-align: center;
+            padding: 20px;
+        }
+        .error-title {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0;
+            line-height: 1;
+        }
+        .error-subtitle {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: var(--text-white);
+        }
+        .error-desc {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+        .btn-back {
+            background-color: var(--primary);
+            color: var(--text-white);
+            text-decoration: none;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .btn-back:hover {
+            background-color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="Logo">Dreamly<span>Host</span>.pl</a>
+    </div>
+</header>
+<main class="error-container">
+    <h1 class="error-title">404</h1>
+    <h2 class="error-subtitle">Ups! Strona, której szukasz, nie istnieje.</h2>
+    <p class="error-desc">Prawdopodobnie wpisałeś zły adres lub strona została przeniesiona.</p>
+    <a href="index.html" class="btn-back">Powrót do strony głównej</a>
+</main>
+</body>
+</html>
